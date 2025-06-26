@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: #fdd9e3;
+    color: #6b4e4e;
+  }
+  
+  #start-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #f7d3d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: opacity 0.6s ease;
+  }
+  
+  #start-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .invitation-card {
+    text-align: center;
+  }
+  
+  .invitation-icon {
+    width: 250px;
+    cursor: pointer;
+  }
+  
+  #accept-button {
+    margin-top: 20px;
+    width: 150px;
+    cursor: pointer;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .cake-container {
+    position: relative;
+    width: 300px;
+    height: 380px;
+    margin: 0 auto;
+  }
+  
+  .cake-layer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.6s ease;
+  }
+  
+  .cake-layer.show {
+    opacity: 1;
+  }
+  
+  .cake-layer.plate {
+    width: 220px;
+    bottom: 0;
+    z-index: 1;
+  }
+  
+  .cake-layer.tier1 {
+    width: 190px;
+    bottom: 20px;
+    z-index: 1;
+  }
+  
+  .cake-layer.tier2 {
+    width: 140px;
+    bottom: 120px;
+    z-index: 2;
+  }
+  
+  .flames-container {
+    position: absolute;
+    top: 100px; /* adjust as needed */
+    left: 53%;
+    transform: translateX(-50%);
+    width: 120px;  /* match the candle row width */
+    height: 50px;
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 4; /* make sure it’s above the cake */
+  }
+  
+  .flames-container.fade-in {
+    opacity: 1;
+  }
+  
+  .fuego {
+    width: 8px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.9), rgba(255, 140, 0, 0.5));
+    animation: fuego 1.5s infinite;
+    position: absolute;
+  }
+  
+  .fuego:nth-child(1) { left: 10px; }
+  .fuego:nth-child(2) { left: 35px; }
+  .fuego:nth-child(3) { left: 60px; }
+  .fuego:nth-child(4) { left: 85px; }
+  
+  
+  @keyframes fuego {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.85; }
+    50% { transform: translateY(-6px) scale(1.2); opacity: 1; }
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-top: 10px;
+  }
+  
+  p {
+    font-size: 1em;
+  }
+  
